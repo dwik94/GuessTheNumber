@@ -10,7 +10,20 @@ public class Main {
 
         int secretNumber = 1 + random.nextInt(100);
         int guessedInt = scanner.nextInt();
-        IO.println(guessedInt);
+        int numberOfTries = 1;
+
+        while (guessedInt != secretNumber) {
+            if (guessedInt > secretNumber)
+                IO.println("Your number is too big");
+
+            else
+                IO.println("Your number is too small");
+
+            guessedInt = scanner.nextInt();
+            numberOfTries++;
+        }
+
+        IO.println("You found the number " + guessedInt + " after " + numberOfTries + " guesses!" );
 
         scanner.close();
     }
